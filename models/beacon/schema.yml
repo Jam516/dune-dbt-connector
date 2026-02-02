@@ -15,3 +15,17 @@ models:
       - name: op_hash
         tests:
           - not_null
+  - name: uo_builder_codes
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - block_date
+              - unique_id
+    columns:
+      - name: block_date
+        tests:
+          - not_null
+      - name: unique_id
+        tests:
+          - not_null

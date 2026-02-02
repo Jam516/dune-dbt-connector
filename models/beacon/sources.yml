@@ -3,9 +3,16 @@ version: 2
 sources:
   - name: erc4337_base
     tables:
+      - name: entrypoint_evt_useroperationevent
+      - name: entrypoint_v0_6_evt_useroperationevent
+      - name: entrypoint_v0_7_evt_useroperationevent
       - name: EntryPoint_v0_6_call_innerHandleOp
       - name: EntryPoint_v0_7_call_innerHandleOp
       - name: entrypoint_call_innerhandleop
   - name: base
     tables:
+      - name: transactions
       - name: traces
+  - name: prices
+    tables:
+      - name: hour
