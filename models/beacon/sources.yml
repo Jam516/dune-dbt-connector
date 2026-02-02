@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: erc4337_base
+    tables:
+      - name: EntryPoint_v0_6_call_innerHandleOp
+      - name: EntryPoint_v0_7_call_innerHandleOp
+      - name: entrypoint_call_innerhandleop
+  - name: base
+    tables:
+      - name: traces
