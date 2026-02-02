@@ -11,6 +11,7 @@ sources:
       - name: entrypoint_call_innerhandleop
   - name: base
     tables:
+      - name: logs
       - name: transactions
       - name: traces
   - name: prices
