@@ -27,6 +27,7 @@ with log_ranges as (
         t.hash
         , t.block_time
         , t.block_date
+        , t."from" as from_address
         , (t.l1_fee + t.gas_used * t.gas_price) / 1e18 as txn_fee_eth
         , p.price * (t.l1_fee + t.gas_used * t.gas_price) / 1e18 as txn_fee_usd
         , cast(t.data as varchar) as calldata
@@ -52,6 +53,7 @@ select
     , block_time
     , hash as unique_id
     , hash as tx_hash
+    , from_address
     , cast(null as varbinary) as op_hash
     , txn_fee_eth
     , txn_fee_usd

@@ -85,6 +85,7 @@ with log_indexs as (
         , u.op_hash
         , u.block_time
         , u.block_date
+        , u.sender as from_address
         , pc.pct_of_tx * (t.l1_fee + t.gas_used * t.gas_price) / 1e18 as txn_fee_eth
         , pc.pct_of_tx * p.price * (t.l1_fee + t.gas_used * t.gas_price) / 1e18 as txn_fee_usd
         , cast(u.call_data as varchar) as calldata
@@ -120,6 +121,7 @@ select
     , op_hash as unique_id
     , op_hash
     , tx_hash
+    , from_address
     , txn_fee_eth
     , txn_fee_usd
     , start_log_index
