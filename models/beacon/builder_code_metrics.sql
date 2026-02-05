@@ -71,7 +71,7 @@ with combined as (
         and t.block_month >= date '2026-01-01'
         and t.block_date < current_date
         {% if is_incremental() %}
-        and block_date >= current_date - interval '3' day
+        and t.block_date >= current_date - interval '3' day
         {% endif %}
     group by 1
 )
