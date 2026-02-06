@@ -14,6 +14,9 @@ sources:
       - name: logs
       - name: transactions
       - name: traces
+  - name: dex
+    tables:
+      - name: trades
   - name: prices
     tables:
       - name: hour

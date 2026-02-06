@@ -63,7 +63,7 @@ with combined as (
         e.unique_id,
         sum(t.amount_usd) as volume
     from expanded e
-    inner join dex.trades t
+    inner join {{ source('dex', 'trades') }} as t
         on e.tx_hash = t.tx_hash
         and t.evt_index >= e.start_log_index
         and t.evt_index <= e.end_log_index
